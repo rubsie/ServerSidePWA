@@ -9,6 +9,7 @@ import {ProductList} from "./components/ProductList";
 import {BarcodeHandler} from "./components/BarcodeHandler";
 import {ProductProvider} from "./contexts/productscontext";
 import {Examples} from "./components/ExampleBarcodes";
+import {ProductModal} from "./components/Modal";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                     <ProductList/>
                 </Row>
             </Container>
+            <ProductModal/>
             <Examples/>
         </ProductProvider>
     );
