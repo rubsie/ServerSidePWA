@@ -4,11 +4,11 @@ import {useShownProductsContext} from "../contexts/productscontext";
 
 export function BarcodeHandler() {
     const [input, setInput] = useState();
-    const {addProduct} = useShownProductsContext();
+    const {fetchProduct} = useShownProductsContext();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        addProduct(input);
+        fetchProduct(input);
     }
 
     return <>

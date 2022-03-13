@@ -10,28 +10,31 @@ import {BarcodeHandler} from "./components/BarcodeHandler";
 import {ProductProvider} from "./contexts/productscontext";
 import {Examples} from "./components/ExampleBarcodes";
 import {ProductModal} from "./components/Modal";
+import {ShoppingList} from "./components/ShoppingList";
+import {MessageProvider} from "./contexts/messagecontext";
+import {Message} from "./components/Message";
 
 
 function App() {
-    return (
-        <ProductProvider>
-            <Container fluid className="mt-3 mb-3">
-                {/*<Row><h1 className="mt-2">Voorbeeld PWA</h1></Row>
-                <Row><p className="">versie 1.0</p></Row>
-                <Row><h5>Skip Waiting</h5></Row>
-                <ButtonRow>
-                    <Col>
-                        <Button onClick={skipWaiting}>skip waiting</Button>
-                    </Col>
-                </ButtonRow>*/}
-                <Row><BarcodeHandler/></Row>
-                <Row>
+    return (<MessageProvider>
+            <ProductProvider>
+                <Message/>
+                <Container>
+                    <div className="h1">Home stock management</div>
+                </Container>
+                <Container fluid className="mt-3 mb-3">
+                    <BarcodeHandler/>
+                </Container>
+                <Container fluid className="mt-3 mb-3">
                     <ProductList/>
-                </Row>
-            </Container>
-            <ProductModal/>
-            <Examples/>
-        </ProductProvider>
+                </Container>
+                <ProductModal/>
+                <Container fluid className="mt-3 mb-3">
+                    <Examples/>
+                    <ShoppingList/>
+                </Container>
+            </ProductProvider>
+        </MessageProvider>
     );
 }
 
