@@ -9,7 +9,7 @@ export function ProductList() {
 
     return <Container fluid className={"headerIntro"}>
         <Row className={"mx-0"}>
-            {shownProducts.map(product => <Col className={"mb-4"} xs={12} sm={6} lg={4} xl={3}
+            {shownProducts.map(product => <Col className={"mb-3"} xs={6} sm={6} lg={3} xl={2}
                                                key={product.code}><ProductCard key={product.code}
                                                                                product={product}/></Col>)}
         </Row>

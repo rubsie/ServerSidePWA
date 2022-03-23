@@ -10,14 +10,13 @@ export function ProductCard(props) {
             <Card.Body>
                 <Card.Title>{product.product_name}</Card.Title>
                 <Row>
-                    <Image src={product.image}/></Row>
+                    <Card.Img src={product.image} style={{height: "100px", width: "auto"}}/></Row>
                 <Row>
                     <ManageStock product={product} key={product.code}/>
                 </Row>
                 <Row>
                     Minimal stock level: {product.min_stock_level}
                 </Row>
-                <Card.Footer>{product.serving_size}</Card.Footer>
             </Card.Body>
         </Card>
     </>

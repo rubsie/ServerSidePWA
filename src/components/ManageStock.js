@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Col} from "react-bootstrap";
+import {Row, Button, Col} from "react-bootstrap";
 import {fromLocalStorage, toLocalStorage} from "../utilities/localstorage";
 import {useShownProductsContext} from "../contexts/productscontext";
 
@@ -18,9 +18,9 @@ export function ManageStock(props) {
         }
     }
 
-    return <>
-        <Col className={"mb-2"}><Button onClick={() => changeStockCount(product.code, -1)}>-</Button></Col>
-        <Col className={"mb-8"} key={product.code}><Button variant="dark">In Stock: {product.in_stock}</Button></Col>
-        <Col className={"mb-2"}><Button onClick={() => changeStockCount(product.code, +1)}>+</Button></Col>
-    </>
+    return <Row>
+        <Col className={"mb-1"} sm={2}><Button onClick={() => changeStockCount(product.code, -1)}>-</Button></Col>
+        <Col className={"mb-1 center"} sm={8}key={product.code}>In Stock: {product.in_stock}</Col>
+        <Col className={"mb-1"} sm={2}><Button onClick={() => changeStockCount(product.code, +1)}>+</Button></Col>
+    </Row>
 }

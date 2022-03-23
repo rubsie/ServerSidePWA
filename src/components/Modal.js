@@ -42,7 +42,7 @@ export function ProductModal() {
             <Button variant="secondary" onClick={handleClose}>
                 Cancel
             </Button>
-            <Button variant="primary" onClick={(e, id) => handleSave(e, newProduct)}>
+            <Button variant="primary" onClick={(e) => handleSave(e, newProduct)}>
                 Save
             </Button>
         </Modal.Footer>
